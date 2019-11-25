@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.developer.java.JavaApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 81.957 s - in br.developer.java.JavaApplicationTests

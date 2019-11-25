@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Cadastro de Clientes</title>
+</head>
+<body>
+<header>
+<img src="http://blog.gazinatacado.com.br/wp-content/uploads/2015/06/Shopping_cart_full_sign_256.png?x88556" width=200 height=200>
+	</header>
+	
+	<nav> 
+	<a href="index.html"><button onclick="/index.html" class="small button">Vendas</button></a>
+	<a href="cadastrodeclientes.html"><button onclick="cadastrodeclientes" class="small button" >Cadastro de Clientes</button></a>
+	<a href="cadastrodeprodutos.html"><button class="small button">Cadastro de Produtos</button></a>
+	</nav> 
+	
+	<form class="form-horizontal" th:object="${cliente}" th:action="@{/addcliente}" method="POST" style="margin: 10px"> 
+	<div>
+	<label for="nome">Nome do Cliente:</label>
+	<input type="text" th:field"*{nome}" id="nome" placeholder="Nome">
+	<label for="dataDeNascimento">Data de Nascimento:</label>
+	<input type="date" th:field"*{dataDeNascimento}" id="dataDeNascimento" placeholder="Data de Nascimento"/>
+	</div>
+	<div>
+	<label for="sexo">Sexo:</label>
+	<select th:field"*{sexo}" id="sexo" placeholder="Sexo">
+	<option value="M">Masculino</option>
+  <option value="F">Feminino</option>
+	</select>
+	<label for="cpf">CPF:</label>
+	<input type="text" th:field"*{cpf}" id="cpf" placeholder="CPF">
+	</div>
+	<br>
+	<input type="submit" value="Cadastrar Cliente">
+	</form> 
+	
+	<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-sm table-striped table-hover table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nome</th>
+							<th>CPF</th>
+							<th>Data de Nascimento</th>
+							<th>Sexo</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cliente : ${clientes}">
+							<td th:text="${cliente.id}"></td>
+							<td th:text="${cliente.nome}"></td>
+							<td th:text="${cliente.cpf}"></td>
+							<td th:text="${cliente.dataDeNascimento}"></td>
+							<td th:text="${cliente.sexo}"></td>
+							<td>
+								<div class="btn-group pull-right">
+							   		<a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${post.id})}" >Editar</a>
+							   		<a class="delete btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${post.id})}">Excluir</a>
+							   </div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+</body>
+</html>
