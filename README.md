@@ -4,19 +4,28 @@ Criação de um sistema de vendas, com objetivo de registrar 10 (dez) vendas em 
 
 # Detalhes da programação.
 # Telas
-Foram criadas telas para cadastro de clientes e produtos, como também o registro de vendas.
+Foram criadas telas para cadastro de clientes e produtos e vendas, como também suas listagens.
 * Tela de Cadastro de Produtos
-<img src="https://i.imgur.com/40d99Mf.png">
+<img src="https://i.imgur.com/OhjyT74.png">
 
 * Tela de Cadastro de Clientes
-<img src="https://i.imgur.com/oqdTkeI.png">
+<img src="https://i.imgur.com/GbuTG9A.png">
 
-* Tela de Registro de Vendas
-<img src="https://i.imgur.com/XKk7AOc.png">
+* Tela de Cadastro de Vendas
+<img src="https://i.imgur.com/AnsYbCk.png">
+
+* Tela de Listagem de Clientes
+<img src="https://i.imgur.com/KbXBypA.png">
+
+* Tela de Listagem de Produtos
+<img src="https://i.imgur.com/ygEwVNI.png">
+
+* Tela de Listagem de Vendas
+<img src="https://i.imgur.com/lFw7AKM.png">
 
 # Banco de Dados
 O Banco de Dados utilizado foi o MySQL, conectado através do application.properties utilizando os comandos básicos do Spring Boot. Através das criações das classes Clientes, Vendas e Produtos, as tabelas foram geradas automaticamente no database "desafiojava". <br>
-<img src="https://i.imgur.com/R7v1iGO.png">
+<img src="https://i.imgur.com/DqSdzTd.png">
 
 # Entidades
 Foram criadas entidades com campos solicitados pelo desafio, como "nome de produto", "CPF de cliente", e foram organizadas através de uma package com o final .entity <br>
@@ -27,10 +36,14 @@ Para enviar os dados para o Banco de Dados, foi criado um Repository para cada e
 <img src="https://i.imgur.com/eyru07f.png">
 
 # Controller
-Para o HTML ter contato com o Back-end, foi necessário criar controllers utilizando técnicas de Thymeleaf para implantar nos códigos HTML e referenciar os dados. Porém, sua conclusão não foi bem sucedida na tentativa de fazer com o ClientesController, sendo implementado com RequestMapping e também com PostMapping, retornando o erro 405 = Method Not Allowed.
+Para o HTML ter contato com o Back-end, foi necessário criar controllers utilizando técnicas de Thymeleaf para implantar nos códigos HTML e referenciar os dados, gerando também o método RequestMapping que organizou as páginas através da metodologia REST.
+<img src="https://i.imgur.com/ZsFg2Gc.png">
 
 # Visão Geral
 <img src="https://i.imgur.com/lkUrgjZ.png">
 
+# Vendas
+O sistema está funcionando e pode ser feita várias vendas conforme o cliente e o produto estiver cadastrado. Não há recursos de delete/alter no momento, porém poderá ser implementado futuramente.
+
 # Conclusão
-O projeto não foi concluído de forma precisa, porém obtive grande aprendizado de Spring e Thymeleaf durante este processo que pode resultar grandes resultados futuros. Creio que o esforço estabelecido neste projeto deve ser visto como o ponto principal, e ser considerado para futuras oportunidades. 
+O projeto foi concluído fazendo com que suas funcionalidades principais fossem exercidas com êxito, podendo cadastrar diversos clientes, produtos e efetuar diversas vendas sem nenhum problema. O desafio futuro seria implementar o botão de efetuar um relatório e também reunir o cadastro com a listagem para priorizar a melhor experiência para o usuário.
