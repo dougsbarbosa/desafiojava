@@ -36,7 +36,7 @@ Para enviar os dados para o Banco de Dados, foi criado um Repository para cada e
 <img src="https://i.imgur.com/eyru07f.png">
 
 # Controller
-Para o HTML ter contato com o Back-end, foi necessário criar controllers utilizando técnicas de Thymeleaf para implantar nos códigos HTML e referenciar os dados, gerando também o método RequestMapping que organizou as páginas através da metodologia REST.
+Para o HTML ter contato com o Back-end, foi necessário criar controllers utilizando técnicas de Thymeleaf para implantar nos códigos HTML e referenciar os dados, gerando também o método RequestMapping que organizou as páginas através da metodologia REST.<br>
 <img src="https://i.imgur.com/ZsFg2Gc.png">
 
 # Visão Geral
