@@ -5,29 +5,34 @@ import java.util.*;
 import javax.persistence.*;
 
 @Entity
+@Table (name = "vendas")
 public class Vendas {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@ManyToMany
-	private List<Produtos> produtos; 
-	@ManyToMany
-	private Set<Clientes> clientes;   
+	@Column(name = "id")
+	@GeneratedValue
+	public Long id;
+	@ManyToOne 
+	private Produtos produtos; 
+	private String nome_produto;
+	@ManyToOne 
+	private Clientes cliente;
+	private String nome_cliente;
+	@Column(name = "quantidade")
 	private int quantidade;  
+	@Column(name = "total")
 	private double total;
 	
-	public List<Produtos> getProduto() {
+	public Produtos getProduto() {
 		return produtos;
 	}
-	public void setProduto(List<Produtos> produtos) {
+	public void setProduto(Produtos produtos) {
 		this.produtos = produtos;
 	}
-	public Set<Clientes> getCliente() {
-		return clientes;
+	public Clientes getCliente() {
+		return cliente;
 	}
-	public void setCliente(Set<Clientes> clientes) {
-		this.clientes = clientes;
+	public void setCliente(Clientes cliente) {
+		this.cliente = cliente;
 	}
 	public int getQuantidade() {
 		return quantidade;
@@ -36,11 +41,19 @@ public class Vendas {
 		this.quantidade = quantidade;
 	}
 	public double getTotal() {
-		return total;
+		return total = quantidade * produtos.getValor();
 	}
-	public void setTotal(double total) {
-		this.total = quantidade * ((Produtos) produtos).getValor();
-	} 
+
+	public String getNome_produto() {
+		return nome_produto = produtos.getNome();
+	}
+
+	public String getNome_cliente() {
+		return nome_cliente = cliente.getNome();
+	}
+
+	
+	
 	
 	
 	

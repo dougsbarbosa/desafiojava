@@ -7,25 +7,31 @@ import java.util.Date;
 import javax.persistence.*;
 import javax.validation.Valid;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
+@Table(name = "clientes")
 public class Clientes {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	@GeneratedValue
 	private Long id;
+	@Column(name = "nome", nullable = false)
 	private String nome;
+	@Column(name = "cpf", nullable = false)
 	private String cpf;
-	private char sexo;
-	SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
-	private Date dataDeNascimento;
-
-	public void setNascimento(String dataRecebida) throws ParseException { 
-	    this.dataDeNascimento = formato.parse(dataRecebida);
-	}
+	@Column(name = "sexo", nullable = false)
+	private String sexo;
+	@Column(name = "data_de_nascimento")
+	private String dataDeNascimento;
 	
-	public Date getNascimento() {
+	public String getDataDeNascimento() {
 		return dataDeNascimento;
+	}
+	public void setDataDeNascimento(String dataDeNascimento) {
+		this.dataDeNascimento = dataDeNascimento;
 	}
 	
 	public String getNome() {
@@ -40,21 +46,13 @@ public class Clientes {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-public void setSexo(char sexo){
+public void setSexo(String sexo){
 		
 		this.sexo = sexo;
 	}
 	
 	public String getSexo() {
-		if (sexo =='M' || sexo == 'm') {
-			return "Masculino";
-		}
-		else if (sexo == 'f' || sexo == 'F') {
-			return "Feminino";
-		}
-		else {
-			return "Outro";
-		}
+	return sexo;
 		
 	}
 

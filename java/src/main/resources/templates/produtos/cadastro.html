@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Cadastro de Produtos</title>
+</head>
+<body>
+<header>
+<img src="http://blog.gazinatacado.com.br/wp-content/uploads/2015/06/Shopping_cart_full_sign_256.png?x88556" width=200 height=200>
+	</header>
+	
+		<nav> 
+	<a href="/clientes/cadastrar"><button onclick="cadastrodeclientes" class="small button" >Cadastro de Clientes</button></a>
+	<a href="/produtos/cadastrar"><button class="small button">Cadastro de Produtos</button></a>
+	<a href="/vendas/cadastrar"><button onclick="/index.html" class="small button">Cadastrar Venda</button></a>
+	<a href="/"><button class="small button">Inicio</button></a>
+	<a href="/vendas/listar"><button onclick="/index.html" class="small button">Lista de Vendas</button></a>
+	<a href="/clientes/listar"><button class="small button">Lista de Clientes</button></a>
+	<a href="/produtos/listar"><button class="small button">Lista de Produtos</button></a>
+	</nav>  
+	
+
+	<form th:action="@{/produtos/salvar}" th:object="${produto}" method="POST">
+	<div>
+	<label>Nome do Produto:</label>
+	<input type="text" th:field="*{nome}" id="nome" placeholder="Nome do Produto"/>
+	</div>
+	<br>
+	<div>
+	<label>Valor do Produto:</label>
+	<input type="number" min="0.00" max="10000.00" step="0.01" th:field="*{valor}" id="valor" placeholder="R$"/>
+	</div>
+	<br>
+	<input type="hidden" id="id" name = "id" value= ""/>
+	<input type="submit" value="Cadastrar Produto">
+	</form>
+	
+	 <footer class="footer">
+        <div class="container">
+            <span class="footer-copy">&copy; 2019 Desenvolvido por Douglas Barbosa.</span>
+        </div>
+    </footer>	
+	
+	<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" th:href="@{/js/bootstrap.js}"></script>
+</body>
+</html>
