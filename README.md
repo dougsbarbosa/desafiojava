@@ -40,10 +40,11 @@ Para o HTML ter contato com o Back-end, foi necessário criar controllers utiliz
 <img src="https://i.imgur.com/ZsFg2Gc.png">
 
 # Visão Geral
-<img src="https://i.imgur.com/lkUrgjZ.png">
+<img src="https://i.imgur.com/L9Brjcw.png">
 
 # Vendas
-O sistema está funcionando e pode ser feita várias vendas conforme o cliente e o produto estiver cadastrado. Não há recursos de delete/alter no momento, porém poderá ser implementado futuramente.
+O sistema está funcionando e pode ser feita várias vendas conforme o cliente e o produto estiver cadastrado. Não há recursos de delete/alter no momento, porém poderá ser implementado futuramente. Confira abaixo as 10 vendas realizadas de produtos cadastrados, que no desafio era apenas para criar um produto, mas foi implementado o cadastro de produtos e foi possível criar diversos produtos ao mesmo tempo.
+<img src="https://i.imgur.com/9ATpWob.png">
 
 # Conclusão
 O projeto foi concluído fazendo com que suas funcionalidades principais fossem exercidas com êxito, podendo cadastrar diversos clientes, produtos e efetuar diversas vendas sem nenhum problema. O desafio futuro seria implementar o botão de efetuar um relatório e também reunir o cadastro com a listagem para priorizar a melhor experiência para o usuário.
